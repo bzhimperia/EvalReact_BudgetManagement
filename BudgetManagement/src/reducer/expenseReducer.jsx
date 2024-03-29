@@ -16,7 +16,7 @@ const expenseReducer = (state, action) => {
       id: Date.now(),
       title: action.payload.title,    
       amount: action.payload.amount,  
-      category: action.payload.category,
+      category: action.payload.category, 
       done: false
     }])
   };

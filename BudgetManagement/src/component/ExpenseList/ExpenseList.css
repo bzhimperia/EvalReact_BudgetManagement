@@ -1,0 +1,20 @@
+.expend {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin: auto;
+}
+.expend span {
+  border: 2px solid white;
+  width: 100%;
+  border-collapse: collapse;
+  padding: 10px;
+}
+ul {
+  list-style-type: none;
+}
+
+.expendtitle {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
