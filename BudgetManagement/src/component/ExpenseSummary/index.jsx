@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ExpenseSummary = ({ expenses }) => {
-  const totalExpenses = expenses.reduce((acc, curr) => acc + curr.amount, 0);
+  const totalExpenses = expenses.reduce((acc, curr) => acc + parseFloat(curr.amount), 0);
 
   return (
     <div>

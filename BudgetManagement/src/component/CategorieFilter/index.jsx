@@ -1,27 +1,23 @@
-const CategorieFilter = () => {
+import React, { useState } from 'react';
 
-    //Je récupère l'état et la fonction de dispatch à partir de mon context
-    //Je récupère le filtre sélectionnée et la liste des catégories
-    const {filter, categories} = state
-    const handleFilterChange = (e) => {
-        //la valeur récupérée est l'id de la catégorie sélectionnée.
-        const {value} = e.target
-        dispatch({
-            type: "set_filter",
-            payload: value
-        })
-    }
+
+const CategorieFilter = ({ categories, onCategoryChange }) => {
+    const [selectedCategory, setSelectedCategory] = useState('');
+
+    const handleCategoryChange = (e) => {
+        const category = e.target.value;
+        setSelectedCategory(category);
+        onCategoryChange(category);
+    };
 
     return (
         <div>
             <label htmlFor={'filtre'}>Filtres : </label>
-            <select value={filter} id={'filtre'} onChange={handleFilterChange}>
-                <option value={""}>Toutes</option>
-                {
-                    categories.map(cat => {
-                        return <option key={cat.id} value={cat.id}>{cat.label}</option>
-                    })
-                }
+            <select value={selectedCategory} id={'filtre'} onChange={handleCategoryChange}>
+                <option value="">Toutes les catégories</option>
+                {categories.map(cat => (
+                    <option key={cat} value={cat}>{cat}</option>
+                ))}
             </select>
         </div>
     );

@@ -10,14 +10,16 @@ const expenseReducer = (state, action) => {
     switch(action.type) {
 
         case 'add_expense':
-            return {
-                ...state,
-                expenses: state.expenses.concat([{
-                    title: action.payload.titre,
-                    amount: action.payload.montant,
-                    category: action.payload.categorie,
-                    }])
-            }
+  return {
+    ...state,
+    expenses: state.expenses.concat([{
+      id: Date.now(),
+      title: action.payload.title,    
+      amount: action.payload.amount,  
+      category: action.payload.category,
+      done: false
+    }])
+  };
         case 'set_filter':
             return {
                 ...state,
