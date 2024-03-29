@@ -11,14 +11,18 @@ const ExpenseSummary = ({ expenses, selectedCategory }) => {
       .filter(expense => expense.category === selectedCategory)
       .reduce((acc, curr) => acc + parseFloat(curr.amount), 0);
   }
+
+  const formattedTotal= totalExpenses.toFixed(2)
+
+
   
   return (
     <div className="expense-summary">
       <h2>Résumé des Dépenses</h2>
       {selectedCategory === "" ? (
-        <p>Total des Dépenses pour toutes les catégories: <span className="total">{totalExpenses}€</span></p>
+        <p>Total des Dépenses pour toutes les catégories: <span className="total">{formattedTotal}€</span></p>
       ) : (
-        <p>Total des Dépenses pour la catégorie {selectedCategory}: <span className="total">{totalExpenses}€</span></p>
+        <p>Total des Dépenses pour la catégorie {selectedCategory}: <span className="total">{formattedTotal}€</span></p>
       )}
     </div>
   );

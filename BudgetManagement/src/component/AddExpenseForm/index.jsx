@@ -52,7 +52,7 @@ const AddExpenseForm = ({ dispatch }) => {
         <div className="form-group">
           <label htmlFor="amount">Montant (max 2 décimales)</label>
           <input
-            type="text"
+            type="number"
             id="amount"
             placeholder="Montant"
             value={amount}
@@ -63,7 +63,7 @@ const AddExpenseForm = ({ dispatch }) => {
         <div className="form-group">
           <label htmlFor="category">Catégorie</label>
           <select id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
-            <option value="">Sélectionner une catégorie</option>
+          <option disabled={true} value="">Sélectionner une catégorie</option>
             <option value="Alimentation">Alimentation</option>
             <option value="Logement">Logement</option>
             <option value="Transport">Transport</option>
