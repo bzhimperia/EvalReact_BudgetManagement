@@ -4,7 +4,6 @@ import "./ExpenseList.css";
 const ExpenseList = ({ expenses }) => {
   return (
     <div>
-      <h2>Liste des Dépenses</h2>
       <ul>
       <div className='expendtitle expend'> <span>title </span>   <span>amount</span>    <span>category</span></div>
         {expenses.map((expense, index) => (

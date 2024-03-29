@@ -1,0 +1,20 @@
+.filter-container label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.filter-container select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-container select:focus {
+  outline: none;
+}
+
+.filter-container option {
+  font-size: 16px;
+}

@@ -5,18 +5,34 @@ const AddExpenseForm = ({ dispatch }) => {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title || !amount || !category) {
-      alert('Remplissez les 3 champs!');
-      return;
-    }
+    try {
+      if (!title || !amount || !category) {
+        throw new Error('Veuillez remplir tous les champs!');
+      }
 
-    dispatch({ type: 'add_expense', payload: { title, amount, category } }); // Modifié ici
-    setTitle('');
-    setAmount('');
-    setCategory('');
+      const amountValue = parseFloat(amount);
+      const decimalPart = amountValue.toString().split('.')[1];
+      if (decimalPart && decimalPart.length > 2) {
+        throw new Error('Le montant ne peut pas avoir plus de deux chiffres après la virgule.');
+      }
+
+      const expense = {
+        title,
+        amount: amountValue,
+        category,
+      };
+      dispatch({ type: 'add_expense', payload: expense });
+      setTitle('');
+      setAmount('');
+      setCategory('');
+      setError('');
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
@@ -60,6 +76,7 @@ const AddExpenseForm = ({ dispatch }) => {
         <div className="form-group">
           <button type="submit">Ajouter</button>
         </div>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
     </div>
   );

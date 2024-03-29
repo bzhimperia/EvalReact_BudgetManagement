@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './CategorieFilter.css';
 
 const CategorieFilter = ({ categories, onCategoryChange }) => {
     const [selectedCategory, setSelectedCategory] = useState('');
@@ -11,9 +11,9 @@ const CategorieFilter = ({ categories, onCategoryChange }) => {
     };
 
     return (
-        <div>
-            <label htmlFor={'filtre'}>Filtres : </label>
-            <select value={selectedCategory} id={'filtre'} onChange={handleCategoryChange}>
+        <div className="filter-container">
+            <label htmlFor="filtre">Filtrer : </label>
+            <select value={selectedCategory} id="filtre" onChange={handleCategoryChange}>
                 <option value="">Toutes les catégories</option>
                 {categories.map(cat => (
                     <option key={cat} value={cat}>{cat}</option>

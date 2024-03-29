@@ -13,11 +13,10 @@ const expenseReducer = (state, action) => {
   return {
     ...state,
     expenses: state.expenses.concat([{
-      id: Date.now(),
       title: action.payload.title,    
       amount: action.payload.amount,  
       category: action.payload.category, 
-      done: false
+
     }])
   };
         case 'set_filter':

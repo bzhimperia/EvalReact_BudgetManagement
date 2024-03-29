@@ -1,4 +1,5 @@
 import React from 'react';
+import './ExpenseSummary.css';
 
 const ExpenseSummary = ({ expenses, selectedCategory }) => {
   let totalExpenses;
@@ -12,12 +13,12 @@ const ExpenseSummary = ({ expenses, selectedCategory }) => {
   }
   
   return (
-    <div>
+    <div className="expense-summary">
       <h2>Résumé des Dépenses</h2>
       {selectedCategory === "" ? (
-        <p>Total des Dépenses pour toutes les catégories: {totalExpenses}€</p>
+        <p>Total des Dépenses pour toutes les catégories: <span className="total">{totalExpenses}€</span></p>
       ) : (
-        <p>Total des Dépenses pour la catégorie {selectedCategory}: {totalExpenses}€</p>
+        <p>Total des Dépenses pour la catégorie {selectedCategory}: <span className="total">{totalExpenses}€</span></p>
       )}
     </div>
   );

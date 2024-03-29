@@ -1,0 +1,24 @@
+.expense-summary {
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.expense-summary h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.expense-summary p {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.expense-summary .total {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: rgb(247, 128, 128);
+}

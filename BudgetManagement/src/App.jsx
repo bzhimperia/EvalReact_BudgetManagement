@@ -25,10 +25,10 @@ function App() {
     <div className="App">
         <h1>Gestion de Dépenses Personnelles</h1>
         <AddExpenseForm dispatch={dispatch} />
+        <span className='titlefilter'><h2>Liste des dépenses </h2><CategorieFilter categories={categories} onCategoryChange={handleCategoryChange} /></span>
         <ExpenseList expenses={filteredExpenses} />
-        <CategorieFilter categories={categories} onCategoryChange={handleCategoryChange} />
         <ExpenseSummary expenses={filteredExpenses} selectedCategory={selectedCategory} />
-       
+        
     </div>
 );
 }
