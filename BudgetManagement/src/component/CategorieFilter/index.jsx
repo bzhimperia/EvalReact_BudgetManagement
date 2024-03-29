@@ -1,9 +1,6 @@
-import {useTodoContext} from "../../context/ExepenseContext.jsx";
-
 const CategorieFilter = () => {
 
     //Je récupère l'état et la fonction de dispatch à partir de mon context
-    const {state, dispatch} = useTodoContext()
     //Je récupère le filtre sélectionnée et la liste des catégories
     const {filter, categories} = state
     const handleFilterChange = (e) => {

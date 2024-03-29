@@ -3,11 +3,11 @@ import './App.css';
 import AddExpenseForm from './component/AddExpenseForm/index.jsx';
 import ExpenseList from './component/ExpenseList/index.jsx';
 import ExpenseSummary from './component/ExpenseSummary/index.jsx';
-import expenseReducer from './reducer/expenseReducer';
+import { expenseReducer, initialState } from './reducer/expenseReducer'; // Importez le reducer directement
 import { useReducer } from 'react';
 
 function App() {
-  const [state, dispatch] = useReducer(expenseReducer, { expenses: [], filter: "" });
+  const [state, dispatch] = useReducer(expenseReducer, initialState);
 
   return (
     <div className="App">

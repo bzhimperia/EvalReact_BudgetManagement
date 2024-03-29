@@ -16,7 +16,7 @@ const AddExpenseForm = ({ dispatch }) => {
       amount: parseFloat(amount),
       category,
     };
-    dispatch({ type: 'ADD_EXPENSE', payload: expense });
+    dispatch({ type: 'add_expense', payload: expense });
     setTitle('');
     setAmount('');
     setCategory('');

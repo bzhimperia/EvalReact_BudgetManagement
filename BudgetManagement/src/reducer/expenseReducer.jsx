@@ -12,14 +12,11 @@ const expenseReducer = (state, action) => {
         case 'add_expense':
             return {
                 ...state,
-                tasks: state.tasks.concat([{
-                    id: Date.now(),
+                expenses: state.expenses.concat([{
                     title: action.payload.titre,
                     amount: action.payload.montant,
                     category: action.payload.categorie,
-                    
-                    done: false
-                }])
+                    }])
             }
         case 'set_filter':
             return {
@@ -32,6 +29,4 @@ const expenseReducer = (state, action) => {
     }
 }
 
-const useExpenseReducer = () => useReducer(expenseReducer, initialState)
-
-export default useExpenseReducer
+export { expenseReducer, initialState };
